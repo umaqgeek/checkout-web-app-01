@@ -2,13 +2,66 @@
 <html>
   <head>
     <script src="assets/js/angular.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   </head>
   <body>
-
-    <div ng-app="">
-      <p>Name: <input type="text" ng-model="name"></p>
-      <p ng-bind="name"></p>
+    <div ng-app="checkoutApp" ng-controller="checkoutCtrl" class="row" style="margin: 20px 20px 20px 20px;">
+      <div class="col-md-12">
+        <center>
+          <h3>SEEK Job Ads Checkout system</h3>
+        </center>
+      </div>
+      <div class="col-md-6">
+        <table border="1">
+          <tr>
+            <td align="center" style="width: 120px"><strong>Name</strong></td>
+            <td align="center" style="width: 100px"><strong>Price</strong></td>
+            <td align="center"><strong>Description</strong></td>
+            <td align="center" style="width: 100px"><strong>Action</strong></td>
+          </tr>
+          <tr ng-repeat="ad in advertisements">
+            <td align="center">{{ad.name}}</td>
+            <td align="center">{{ad.normalPrice | currency}}</td>
+            <td align="center">{{ad.description}}</td>
+            <td align="center">
+              <button type="button" class="sja-cursor btn btn-success" ng-click="storeData(ad.id)"> &nbsp;+&nbsp; </button>
+              <button type="button" class="sja-cursor btn btn-warning" ng-click="removeData(ad.id)"> &nbsp;-&nbsp; </button>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-md-3">
+        <br />
+        Customer priviledged:
+        <select class="form-control" ng-model="customer">
+          <option ng-repeat="cust in customers">{{cust.id}}</option>
+        </select>
+        <center>
+          <br />
+          <button type="button" class="sja-cursor btn btn-success" ng-click="calculateData()">Calculate</button>
+          <button type="button" class="sja-cursor btn btn-info" ng-click="refreshPage()">Clear</button>
+          <br /><br />
+          <textarea class="form-control" rows="8" disabled="true">{{result.data}}</textarea>
+        </center>
+      </div>
+      <div class="col-md-3">
+        <br />
+        <table>
+          <tr>
+            <td align="center"><strong>Chosen Items</strong></td>
+          </tr>
+          <tr ng-repeat="item in items track by $index">
+            <td align="center">
+              {{ item }}
+            </td>
+          </tr>
+        </table>
+      </div>
     </div>
-
   </body>
 </html>
