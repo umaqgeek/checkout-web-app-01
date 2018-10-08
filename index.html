@@ -13,8 +13,9 @@
     <div ng-app="checkoutApp" ng-controller="checkoutCtrl" class="row" style="margin: 20px 20px 20px 20px;">
       <div class="col-md-12">
         <center>
-          <h3>SEEK Job Ads Checkout system</h3>
+          <h2>SEEK Job Ads Checkout system</h2>
         </center>
+        <hr />
       </div>
       <div class="col-md-6">
         <table border="1">
@@ -35,32 +36,73 @@
           </tr>
         </table>
       </div>
-      <div class="col-md-3">
-        <br />
-        Customer priviledged:
-        <select class="form-control" ng-model="customer">
-          <option ng-repeat="cust in customers">{{cust.id}}</option>
-        </select>
-        <center>
-          <br />
-          <button type="button" class="sja-cursor btn btn-success" ng-click="calculateData()">Calculate</button>
-          <button type="button" class="sja-cursor btn btn-info" ng-click="refreshPage()">Clear</button>
-          <br /><br />
-          <textarea class="form-control" rows="8" disabled="true">{{result.data}}</textarea>
-        </center>
-      </div>
-      <div class="col-md-3">
+      <div class="col-md-2">
         <br />
         <table>
           <tr>
-            <td align="center"><strong>Chosen Items</strong></td>
+            <td align="center" colspan="2"><strong>Chosen Items</strong></td>
           </tr>
-          <tr ng-repeat="item in items track by $index">
+          <tr style="background-color: rgba(0, 0, 0, 0.1);">
+            <td align="center"><strong>Name</strong></td>
+            <td align="center"><strong>Quantity Chosen</strong></td>
+          </tr>
+          <tr ng-repeat="item in items.display track by $index">
             <td align="center">
-              {{ item }}
+              {{ item.item }}
+            </td>
+            <td align="center">
+              {{ item.count }}
             </td>
           </tr>
         </table>
+      </div>
+      <div class="col-md-4">
+        <div class="col-md-12">
+          <br />
+          Customer priviledged:
+          <select class="form-control" ng-model="customer">
+            <option ng-repeat="cust in customers">{{cust.id}}</option>
+          </select>
+        </div>
+        <div class="col-md-12">
+          <center>
+            <br />
+            <button type="button" class="sja-cursor btn btn-success" ng-click="calculateData()">Calculate</button>
+            <button type="button" class="sja-cursor btn btn-info" ng-click="refreshPage()">Clear</button>
+            <br /><br />
+          </center>
+        </div>
+        <div class="col-md-12">
+          <center>
+            <h3><strong>TOTAL : </strong>&#36;{{result}}</h3>
+          </center>
+        </div>
+        <div class="col-md-12">
+          <br />
+          <center>
+            <table>
+              <tr>
+                <td align="center" style="width: 40%;"><strong>Customer Priviledged</strong></td>
+                <td align="center">{{resultFull.customer}}</td>
+              </tr>
+              <tr>
+                <td align="center"><strong>SKUs</strong></td>
+                <td align="center">
+                  <table>
+                    <tr>
+                      <td align="center" style="width: 50%;"><strong>SKU Name</strong></td>
+                      <td align="center"><strong>Quantity</strong></td>
+                    </tr>
+                    <tr ng-repeat="resultSKUs in resultFull.skusWithCounter track by $index">
+                      <td align="center" style="width: 50%;">{{resultSKUs.name}}</td>
+                      <td align="center">{{resultSKUs.count}}</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </center>
+        </div>
       </div>
     </div>
   </body>

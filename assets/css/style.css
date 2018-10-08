@@ -1,6 +1,7 @@
 .sja-cursor {
   cursor: pointer;
 }
+
 table {
   width: 100%;
   align: center;
@@ -32,9 +33,11 @@ td {
 tr:first-child {
   background-color: rgba(0, 0, 0, 0.2);
 }
+
 .sja-div-top {
   width: 100px;
 }
+
 .sja-board {
   margin-left: 100px;
   margin-right: 100px;
