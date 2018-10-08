@@ -1,7 +1,6 @@
 var app = angular.module('checkoutApp', []);
 
-// const APP_BASE_URL = 'http://localhost:8081/';
-const APP_BASE_URL = 'https://sja-checkout-core-server.herokuapp.com/';
+const APP_BASE_URL = 'http://localhost:8081/';
 
 app.controller('checkoutCtrl', function($scope, $http, $templateCache, $window) {
 

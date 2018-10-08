@@ -1,0 +1,47 @@
+.sja-cursor {
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  align: center;
+  border-spacing: 0px;
+  border-style: solid;
+  border-collapse: collapse;
+  border-width: 2px;
+}
+table td, table th {
+  border: 2px solid black;
+}
+table tr:first-child th {
+  border-top: 0;
+}
+table tr:last-child td {
+  border-bottom: 0;
+}
+table tr td:first-child,
+table tr th:first-child {
+  border-left: 0;
+}
+table tr td:last-child,
+table tr th:last-child {
+  border-right: 0;
+}
+td {
+  padding: 5px;
+}
+tr:first-child {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.sja-div-top {
+  width: 100px;
+}
+
+.sja-board {
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+}
