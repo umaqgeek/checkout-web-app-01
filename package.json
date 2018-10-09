@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/umaqgeek/checkout-web-app-01/issues"
   },
-  "homepage": "https://github.com/umaqgeek/checkout-web-app-01#readme"
+  "homepage": "https://github.com/umaqgeek/checkout-web-app-01#readme",
+  "dependencies": {
+    "angular-loading-bar": "^0.9.0"
+  }
 }

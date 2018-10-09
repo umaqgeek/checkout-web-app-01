@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="assets/js/angular.min.js"></script>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/script.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel='stylesheet' type="text/css" href='assets/css/loading-bar.min.css' type='text/css' media='all' />
+    <script type='text/javascript' src="assets/js/angular.min.js"></script>
+    <script type='text/javascript' src="assets/js/jquery.min.js"></script>
+    <script type='text/javascript' src="assets/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src="assets/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src="assets/js/script.js"></script>
+    <script type='text/javascript' src='assets/js/loading-bar.min.js'></script>
   </head>
   <body>
     <div ng-app="checkoutApp" ng-controller="checkoutCtrl" class="row" style="margin: 20px 20px 20px 20px;">
       <div class="col-md-12">
         <center>
-          <h2 ng-show="loading">SEEK Job Ads Checkout123 system</h2>
-          <button type="button" ng-click="buttonClicked">lol</button>
+          <h2>SEEK Job Ads Checkout123 system</h2>
         </center>
         <hr />
       </div>
@@ -71,6 +74,11 @@
             <button type="button" class="sja-cursor btn btn-success" ng-click="calculateData()">Calculate</button>
             <button type="button" class="sja-cursor btn btn-info" ng-click="refreshPage()">Clear</button>
             <br /><br />
+          </center>
+        </div>
+        <div class="col-md-12">
+          <center>
+            <div id="loading-bar-container"></div>
           </center>
         </div>
         <div class="col-md-12">
