@@ -1,7 +1,7 @@
-var app = angular.module('checkoutApp', []);
-
 // const APP_BASE_URL = 'http://localhost:8081/';
 const APP_BASE_URL = 'https://sja-checkout-core-server.herokuapp.com/';
+
+var app = angular.module('checkoutApp', []);
 
 app.controller('checkoutCtrl', function($scope, $http, $templateCache, $window) {
 
@@ -10,6 +10,7 @@ app.controller('checkoutCtrl', function($scope, $http, $templateCache, $window) 
     display: [],
     data: []
   };
+  $scope.loading = true;
 
   $http.get(APP_BASE_URL + 'advertisements')
     .then(function (response) {
@@ -86,4 +87,15 @@ app.controller('checkoutCtrl', function($scope, $http, $templateCache, $window) 
   $scope.refreshPage = function () {
     $window.location.reload();
   }
+
+    // $scope.myVar = 1;
+    //
+    // $scope.$watch('myVar', function() {
+    //     alert('hey, myVar has changed!');
+    // }, true);
+
+    $scope.buttonClicked = function() {
+        // $scope.myVar = 2; // This will trigger $watch expression to kick in
+        alert($scope.myVar);
+    };
 });
